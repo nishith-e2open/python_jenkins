@@ -3,16 +3,13 @@ node {
     git 'https://github.com/nishith-e2open/python_jenkins.git'
   }
   stage('Test') {
-    //  git 'https://github.com/nishith-e2open/python_jenkins.git'
     //  dir('code') {
         bat 'pip install -r requirements.txt'
         bat 'python3 hello.py --name=Adithya'
      // }
   }
     stage('Deploy') {
-     // git 'https://github.com/nishith-e2open/python_jenkins.git'
      // dir('myapp') {
-        bat 'pip install -r requirements.txt'
         bat 'python3 hello.py --name=Nishith'
      // }
     }
