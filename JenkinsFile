@@ -11,6 +11,5 @@ node {
     stage('Deploy') {
      // dir('myapp') {
         bat 'python3 hello.py --name=Nishith'
-     // }
     }
   }
