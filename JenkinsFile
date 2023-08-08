@@ -4,7 +4,7 @@ node {
   }
   stage('Test') {
       git 'https://github.com/devopsjourney1/jenkins-101.git'
-      dir('myapp') {
+      dir('code') {
         bat 'pip install -r requirements.txt'
         bat 'python3 hello.py --name=Adithya'
       }
