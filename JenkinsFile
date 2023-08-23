@@ -1,7 +1,7 @@
 node {
   stage('Preparation') {
     git 'https://github.com/nishith-e2open/python_jenkins.git'
-    echo "Hello World"
+    echo %UserName%
   }
   stage('Test') {
     //  dir('code') {
