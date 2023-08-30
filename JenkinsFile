@@ -1,7 +1,8 @@
-node {
+pipeline {
 agent {
 label 'windows'
 }
+node {
   stage('Preparation') {
     git 'https://github.com/nishith-e2open/python_jenkins.git'
   }
@@ -15,3 +16,4 @@ label 'windows'
         bat 'python3 hello.py --name=Nishith'
     }
   }
+}
