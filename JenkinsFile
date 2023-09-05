@@ -1,19 +1,25 @@
 pipeline {
-agent {
-label 'windows'
-}
-stages {
-  stage('Preparation') {
-    git 'https://github.com/nishith-e2open/python_jenkins.git'
+  agent {
+    label 'windows'
   }
-  stage('Test') {
-    //  dir('code') {
-        bat 'pip install -r requirements.txt'
-        bat 'python3 hello.py --name=Adithya'
-     // }
-  }
+  stages {
+    stage('Preparation') {
+        steps {
+      git 'https://github.com/nishith-e2open/python_jenkins.git'
+        }
+    }
+    stage('Test') {
+        steps {
+      //  dir('code') {
+      bat 'pip install -r requirements.txt'
+      bat 'python3 hello.py --name=Adithya'
+      // }
+        }
+    }
     stage('Deploy') {
-        bat 'python3 hello.py --name=Nishith'
+        steps {
+      bat 'python3 hello.py --name=Nishith'
+        }
     }
   }
 }
