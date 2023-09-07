@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'windowsOffice'
+    label 'windows'
   }
   stages {
     stage('Preparation') {
