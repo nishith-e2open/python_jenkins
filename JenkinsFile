@@ -12,13 +12,17 @@ pipeline {
         steps {
       //  dir('code') {
       bat 'pip install -r requirements.txt'
-      bat 'python3 hello.py --name=Adithya'
+      bat "python3 hello.py --name=${params.TestName}"
       // }
         }
     }
     stage('Deploy') {
         steps {
-      bat 'python3 hello.py --name=Nishith'
+      bat "python3 hello.py --name=${params.DeployName}"
+      copyArtifacts filter: 'myapp/', fingerprintArtifacts: true, projectName: 'my_python_job', selector: lastSuccessful()
+      bat '''cd myapp
+      dir /B /A-D
+      '''
         }
     }
   }
