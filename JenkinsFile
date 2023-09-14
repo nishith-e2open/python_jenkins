@@ -10,10 +10,8 @@ pipeline {
     }
     stage('Test') {
         steps {
-      //  dir('code') {
       bat 'pip install -r requirements.txt'
       bat "python3 hello.py --name=${params.TestName}"
-      // }
         }
     }
     stage('Deploy') {
